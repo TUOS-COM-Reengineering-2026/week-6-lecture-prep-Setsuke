@@ -1,22 +1,22 @@
 import numpy as np
 from lecture import complex_math
 
+import numpy as np
+
 def random_search(function, num_samples=1000, bounds=(-100, 100)):
+    # Generate all random x, y pairs
+    samples = np.random.randint(bounds[0], bounds[1], size=(num_samples, 2))
+
     best_x, best_y = None, None
     best_output = float('inf')
 
-    for _ in range(num_samples):
-        # Generate random x, y within the bounds
-        # TODO: Can we make this random sampling more efficient?
-        x = np.random.randint(*bounds)
-        y = np.random.randint(*bounds)
+    for x, y in samples:
         value = function(x, y)
 
         if value < best_output:
             best_x, best_y, best_output = x, y, value
 
     return best_x, best_y, best_output
-
 
 if __name__ == '__main__':
     x, y, v = random_search(function=complex_math)  # Find the best (x, y) that minimises the value of function(x, y)

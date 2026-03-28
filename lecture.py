@@ -1,19 +1,15 @@
 # PART 1
 def is_palindrome(s):
-    # Check if a string is a palindrome or not.
-    # To make it simple, let's assume that an empty string is a palindrome.
+    left = 0
+    right = len(s) - 1
 
-    if len(s) <= 1:
-        return True  # base case 1
-    elif s[0] != s[-1]:
-        return False  # base case 2
-    else:
-        return is_palindrome(s[1:-1]) # recursive case
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left += 1
+        right -= 1
 
-    # TODO: test_palindrome_long() will trigger RecursionError. Can you fix it by rewriting the above code?
-    # HINT: You can use a loop to replace the recursive call.
-    # TODO: How do you check if your fix is correct?
-
+    return True
 
 # PART 2
 def is_small(a):
@@ -35,10 +31,9 @@ def randomised_function():
 # PART 3 (Advanced Topic)
 def difficult_function(x, y):
     if complex_math(x, y) < 0.000001:
-        return 'solved!'  ## TODO: How can we cover this line? In other words, how to find (x, y) that makes this line executed?
+        return 'solved!'
     else:
         return 'not yet'
-
 
 def complex_math(x, y):
     import numpy as np

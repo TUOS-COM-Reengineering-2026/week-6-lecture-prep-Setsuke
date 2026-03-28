@@ -8,4 +8,32 @@ class MyTestCase(unittest.TestCase):
             second='behaviour 3'
         )
 
-    # TODO: Can you write more test cases below to increase the test coverage of `strange_function`?
+    def test_behaviour_1(self):
+        self.assertEqual(
+            strange_function(100, 100, -50, 0),
+            'behaviour 1'
+        )
+
+    def test_behaviour_2(self):
+        self.assertEqual(
+            strange_function(7, 7, 10, 5),
+            'behaviour 2'
+        )
+
+    def test_behaviour_4(self):
+        self.assertEqual(
+            strange_function(50, 10, 20, -5),
+            'behaviour 4'
+        )
+
+    def test_behaviour_5(self):
+        self.assertEqual(
+            strange_function(30, 10, 5, 15),
+            'behaviour 5'
+        )
+
+    def test_behaviour_6(self):
+        self.assertEqual(
+            strange_function(8, 3, 8, 10),
+            'behaviour 6'
+        )
